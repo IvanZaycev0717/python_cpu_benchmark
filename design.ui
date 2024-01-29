@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>618</width>
-    <height>753</height>
+    <height>698</height>
    </rect>
   </property>
   <property name="font">
@@ -68,13 +68,13 @@ border-radius: 30px;</string>
       <string>Характеристики вашего процессора:</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>40</y>
        <width>571</width>
-       <height>148</height>
+       <height>154</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -148,32 +148,6 @@ border-radius: 30px;</string>
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QLabel" name="label_6">
-          <property name="font">
-           <font>
-            <family>Inter</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Текущая температура процессора,  C:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_7">
-          <property name="font">
-           <font>
-            <family>Inter</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Скорость кулера процессора, об/мин:</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
       <item>
@@ -227,32 +201,6 @@ border-radius: 30px;</string>
           </property>
           <property name="text">
            <string>число потоков</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_12">
-          <property name="font">
-           <font>
-            <family>Inter</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>температура</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_13">
-          <property name="font">
-           <font>
-            <family>Inter</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>скорость кулера</string>
           </property>
          </widget>
         </item>
@@ -489,13 +437,13 @@ border-radius: 30px;</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>120</x>
        <y>10</y>
        <width>432</width>
-       <height>21</height>
+       <height>22</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -529,13 +477,13 @@ border-radius: 30px;</string>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>120</x>
        <y>40</y>
-       <width>166</width>
-       <height>46</height>
+       <width>183</width>
+       <height>48</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -574,7 +522,7 @@ border-radius: 30px;</string>
       <x>10</x>
       <y>480</y>
       <width>601</width>
-      <height>231</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -613,7 +561,7 @@ border-radius: 30px;</string>
        <x>20</x>
        <y>40</y>
        <width>571</width>
-       <height>181</height>
+       <height>71</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -672,25 +620,7 @@ border-radius: 30px;</string>
      </attribute>
      <row>
       <property name="text">
-       <string>Количество
-задействованных ядер ЦПУ</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
        <string>Время работы, с:</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Максимальная
-температура процессора, С:</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Максимальная
-скорость кулера, об/мин:</string>
       </property>
      </row>
      <column>
@@ -705,50 +635,38 @@ border-radius: 30px;</string>
      </column>
      <item row="0" column="0">
       <property name="text">
-       <string>1</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
+       <string>10</string>
       </property>
      </item>
      <item row="0" column="1">
       <property name="text">
-       <string>4</string>
-      </property>
-     </item>
-     <item row="1" column="0">
-      <property name="text">
-       <string>10</string>
-      </property>
-     </item>
-     <item row="1" column="1">
-      <property name="text">
        <string>2</string>
       </property>
      </item>
-     <item row="2" column="0">
-      <property name="text">
-       <string>45</string>
-      </property>
-     </item>
-     <item row="2" column="1">
-      <property name="text">
-       <string>40</string>
-      </property>
-     </item>
-     <item row="3" column="0">
-      <property name="text">
-       <string>2100</string>
-      </property>
-     </item>
-     <item row="3" column="1">
-      <property name="text">
-       <string>2000</string>
-      </property>
-     </item>
     </widget>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>620</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>github.com/IvanZaycev0717</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -757,7 +675,7 @@ border-radius: 30px;</string>
      <x>0</x>
      <y>0</y>
      <width>618</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
