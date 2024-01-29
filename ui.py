@@ -2,10 +2,11 @@ import platform
 import psutil
 
 from PySide6.QtWidgets import QMainWindow
-
-from design import Ui_MainWindow
 from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtCore import QSize
+
+from design import Ui_MainWindow
+from stress_test import CustomBenchamrk
 
 
 class PythonCPUBenchmark(QMainWindow):
@@ -49,6 +50,8 @@ class PythonCPUBenchmark(QMainWindow):
         self.ui.horizontalSlider.valueChanged.connect(self.get_arrays_number)
 
         self.chosen_mods = set()
+        self.alghoritm = self.ui.comboBox.currentIndex()
+        self.arrays_number = self.ui.horizontalSlider.value()
 
     def get_cpu_information(self):
         self.ui.label_8.setText(platform.processor()[:5])
@@ -67,6 +70,7 @@ class PythonCPUBenchmark(QMainWindow):
             self.ui.pushButton.setIcon(self.stop_icon)
             print("Benchark started")
             self.output_results(1, 2)
+            self.test = CustomBenchamrk(self.loop, self.chosen_mods, self.arrays_number, self.alghoritm, self.output_results)
             print("Benchmark ended")
         else:
             self.ui.pushButton.setIcon(self.start_icon)

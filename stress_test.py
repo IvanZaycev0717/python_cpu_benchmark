@@ -18,4 +18,8 @@ class CustomBenchamrk:
                  arrays_number: int,
                  alghoritm: str,
                  output_results):
-        pass
+        self._loop = loop
+        self._chosen_mods = chosen_mods
+        self._arrays_number = arrays_number
+        self._alghoritm = alghoritm
+        self._output_results = output_results
