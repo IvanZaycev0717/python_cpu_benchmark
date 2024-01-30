@@ -50,8 +50,6 @@ class PythonCPUBenchmark(QMainWindow):
         self.ui.horizontalSlider.valueChanged.connect(self.get_arrays_number)
 
         self.chosen_mods = set()
-        self.alghoritm = self.ui.comboBox.currentIndex()
-        self.arrays_number = self.ui.horizontalSlider.value()
 
     def get_cpu_information(self):
         self.ui.label_8.setText(platform.processor()[:5])
@@ -65,14 +63,16 @@ class PythonCPUBenchmark(QMainWindow):
 
             self.disable_mutable_widgets()
 
-            # Clear up any data in the table
             self.set_zero_into_table()
             self.ui.pushButton.setIcon(self.stop_icon)
             print("Benchark started")
             self.output_results(1, 2)
-            self.test = CustomBenchamrk(self.loop, self.chosen_mods, self.arrays_number, self.alghoritm, self.output_results)
-            print("Benchmark ended")
+            test = CustomBenchamrk(self.loop, self.chosen_mods, self.ui.horizontalSlider.value(), self.ui.comboBox.currentIndex(), self.output_results)
+            test.start()
+            self._load_test = test
         else:
+            self._load_test.cancel()
+            self._load_test = None
             self.ui.pushButton.setIcon(self.start_icon)
             self.is_benchmark_in_porgress = False
             self.enable_mutable_widgets()
