@@ -30,6 +30,7 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet(u"font-family: Inter; background-color: #0b132b;")
         MainWindow.setDocumentMode(False)
         MainWindow.setDockNestingEnabled(False)
+        MainWindow.setWindowIcon(QIcon('images/logo.svg'))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.frame = QFrame(self.centralwidget)
