@@ -66,8 +66,8 @@ class PythonCPUBenchmark(QMainWindow):
             self.set_zero_into_table()
             self.ui.pushButton.setIcon(self.stop_icon)
             print("Benchark started")
-            self.output_results(1, 2)
-            test = CustomBenchamrk(self.loop, self.chosen_mods, self.ui.horizontalSlider.value(), self.ui.comboBox.currentIndex(), self.output_results)
+            self.output_results("Идет тестирование", "Идет тестирование")
+            test = CustomBenchamrk(self.loop, self.chosen_mods, self.ui.horizontalSlider.value(), self.ui.comboBox.currentIndex(), self.output_results, self.activate_start_button)
             test.start()
             self._load_test = test
         else:
@@ -76,6 +76,11 @@ class PythonCPUBenchmark(QMainWindow):
             self.ui.pushButton.setIcon(self.start_icon)
             self.is_benchmark_in_porgress = False
             self.enable_mutable_widgets()
+
+    def activate_start_button(self):
+        self.ui.pushButton.setIcon(self.start_icon)
+        self.is_benchmark_in_porgress = False
+        self.enable_mutable_widgets()
 
     def disable_mutable_widgets(self):
         self.ui.horizontalSlider.setEnabled(False)

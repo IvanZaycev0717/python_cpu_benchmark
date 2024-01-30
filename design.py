@@ -22,12 +22,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.setFixedSize(618, 698)
+        MainWindow.setFixedSize(618, 670)
         font = QFont()
         font.setFamilies([u"Inter"])
         font.setPointSize(12)
         MainWindow.setFont(font)
-        MainWindow.setStyleSheet(u"font-family: Inter;")
+        MainWindow.setStyleSheet(u"font-family: Inter; background-color: #0b132b;")
         MainWindow.setDocumentMode(False)
         MainWindow.setDockNestingEnabled(False)
         self.centralwidget = QWidget(MainWindow)
@@ -140,7 +140,7 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
         self.comboBox.setEnabled(True)
-        self.comboBox.setGeometry(QRect(50, 50, 501, 22))
+        self.comboBox.setGeometry(QRect(50, 40, 501, 40))
         self.comboBox.setMouseTracking(False)
         self.comboBox.setTabletTracking(False)
         self.comboBox.setContextMenuPolicy(Qt.DefaultContextMenu)
@@ -149,6 +149,7 @@ class Ui_MainWindow(object):
         self.comboBox.setStyleSheet(u"background-color: #FFFFFF;")
         self.comboBox.setDuplicatesEnabled(False)
         self.comboBox.setFrame(True)
+        self.comboBox.setFont(font1)
         self.frame_3 = QFrame(self.centralwidget)
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setGeometry(QRect(10, 360, 601, 100))
@@ -355,3 +356,4 @@ class Ui_MainWindow(object):
             u"github.com/IvanZaycev0717", None
             )
             )
+        self.label_6.setStyleSheet("color: #eeeeee")
