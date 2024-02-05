@@ -65,7 +65,6 @@ class PythonCPUBenchmark(QMainWindow):
 
             self.set_zero_into_table()
             self.ui.pushButton.setIcon(self.stop_icon)
-            print("Benchark started")
             self.output_results("Идет тестирование", "Идет тестирование")
             test = CustomBenchamrk(self.loop, self.chosen_mods, self.ui.horizontalSlider.value(), self.ui.comboBox.currentIndex(), self.output_results, self.activate_start_button)
             test.start()
