@@ -87,7 +87,7 @@ border-radius: 30px;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="my_res.qrc">:/images/images/intel.svg</pixmap>
+         <pixmap>:/images/images/intel.svg</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -360,7 +360,7 @@ border-radius: 30px;</string>
       <rect>
        <x>330</x>
        <y>40</y>
-       <width>221</width>
+       <width>191</width>
        <height>22</height>
       </rect>
      </property>
@@ -395,8 +395,8 @@ border-radius: 30px;</string>
     <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>70</y>
+       <x>530</x>
+       <y>40</y>
        <width>21</width>
        <height>16</height>
       </rect>
@@ -424,7 +424,7 @@ border-radius: 30px;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="my_res.qrc">
+      <iconset>
        <normaloff>:/images/images/start.png</normaloff>:/images/images/start.png</iconset>
      </property>
      <property name="iconSize">
@@ -514,6 +514,36 @@ border-radius: 30px;</string>
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>70</y>
+       <width>191</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Inter</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Число чисел в массиве:</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>70</y>
+       <width>51</width>
+       <height>22</height>
+      </rect>
+     </property>
     </widget>
    </widget>
    <widget class="QFrame" name="frame_4">
