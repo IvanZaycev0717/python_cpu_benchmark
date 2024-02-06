@@ -19,7 +19,6 @@ def selection_sort(arr: list) -> None:
 
 def bubble_sort(arr: list) -> None:
     """Алгоритм сортировки пузырьком."""
-    print("Сортировка запущена")
     N = len(arr)
     for bypass in range(1, N):
         for k in range(0, N-bypass):
@@ -29,47 +28,36 @@ def bubble_sort(arr: list) -> None:
 
 def count_sort(arr: list) -> None:
     """Алгоритм сортировки подсчетом."""
-    N = len(arr)
-    output = [0] * N
-    count = [0] * 10
+    max_value = max(arr)
+    min_value = min(arr)
+    range_of_elements = max_value - min_value + 1
+    count_arr = [0] * range_of_elements
+    output_arr = [0] * len(arr)
 
-    for i in range(0, N):
-        count[arr[i]] += 1
+    for i in range(len(arr)):
+        count_arr[arr[i] - min_value] += 1
 
-    for i in range(1, 10):
-        count[i] += count[i - 1]
+    for i in range(1, len(count_arr)):
+        count_arr[i] += count_arr[i - 1]
 
-    i = N - 1
-    while i >= 0:
-        output[count[arr[i]] - 1] = arr[i]
-        count[arr[i]] -= 1
-        i -= 1
+    for i in range(len(arr) - 1, -1, -1):
+        output_arr[count_arr[arr[i] - min_value] - 1] = arr[i]
+        count_arr[arr[i] - min_value] -= 1
 
-    for i in range(0, N):
-        arr[i] = output[i]
+    for i in range(len(arr)):
+        arr[i] = output_arr[i]
 
 
-def quick_sort(arr: list) -> None:
-    """Алгоритм быстрой сортировки."""
+def quick_sort(arr):
+    """Алгоритм бьстрой сортировкиэ"""
     if len(arr) <= 1:
-        return
-    barrier = arr[0]
-    L = []
-    M = []
-    R = []
-    for x in arr:
-        if x < barrier:
-            L.append(x)
-        elif x == barrier:
-            M.append(x)
-        else:
-            R.append(x)
-    quick_sort(L)
-    quick_sort(R)
-    k = 0
-    for x in L + M + R:
-        arr[k] = x
-        k += 1
+        return arr
+    else:
+        pivot = arr[len(arr) // 2]
+        left = [x for x in arr if x < pivot]
+        middle = [x for x in arr if x == pivot]
+        right = [x for x in arr if x > pivot]
+        return quick_sort(left) + middle + quick_sort(right)
 
 
 def merge(A: list[int], B: list[int]) -> list[int]:
@@ -98,13 +86,31 @@ def merge(A: list[int], B: list[int]) -> list[int]:
 
 def merge_sort(arr: list[int]) -> None:
     """Алгоритм сортировки слиянием."""
-    if len(arr) <= 1:
-        return
-    middle = len(arr) // 2
-    L = [arr[i] for i in range(middle)]
-    R = [arr[i] for i in range(middle, len(arr))]
-    merge_sort(L)
-    merge_sort(R)
-    C = merge(L, R)
-    for i in range(len(arr)):
-        arr[i] = C[i]
+    if len(arr) > 1:
+        middle = len(arr) // 2
+        left_half = arr[:middle]
+        right_half = arr[middle:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1

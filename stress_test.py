@@ -4,6 +4,8 @@ from concurrent.futures import ProcessPoolExecutor
 import time
 from functools import partial
 from random import randint
+import random
+random.seed(1)
 
 from algorithms import (insert_sort, selection_sort,
                         bubble_sort, count_sort,
