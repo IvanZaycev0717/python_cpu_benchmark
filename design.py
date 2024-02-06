@@ -14,7 +14,7 @@ from PySide6.QtWidgets import (QCheckBox, QComboBox, QFrame,
                                QHBoxLayout, QLabel, QMenuBar,
                                QPushButton, QSizePolicy, QSlider,
                                QStatusBar, QTableWidget, QTableWidgetItem,
-                               QVBoxLayout, QWidget)
+                               QVBoxLayout, QWidget, QSpinBox)
 import my_res_rc
 
 
@@ -156,7 +156,7 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.horizontalSlider = QSlider(self.frame_3)
         self.horizontalSlider.setObjectName(u"horizontalSlider")
-        self.horizontalSlider.setGeometry(QRect(330, 40, 221, 22))
+        self.horizontalSlider.setGeometry(QRect(330, 40, 180, 22))
         self.horizontalSlider.setMinimum(1)
         self.horizontalSlider.setMaximum(10)
         self.horizontalSlider.setValue(4)
@@ -168,8 +168,19 @@ class Ui_MainWindow(object):
         self.horizontalSlider.setTickInterval(0)
         self.label_18 = QLabel(self.frame_3)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setGeometry(QRect(420, 70, 21, 16))
+        self.label_18.setGeometry(QRect(530, 40, 21, 16))
         self.label_18.setFont(font)
+        self.label_60 = QLabel(self.frame_3)
+        self.label_60.setObjectName(u"label_60")
+        self.label_60.setGeometry(QRect(330, 68, 150, 16))
+        self.label_60.setFont(font1)
+        self.spinbox = QSpinBox(self.frame_3)
+        self.spinbox.setGeometry(QRect(490, 65, 100, 23))
+        self.spinbox.setSingleStep(10000)
+        self.spinbox.setMinimum(10000)
+        self.spinbox.setMaximum(100_000_000)
+        self.spinbox.setStyleSheet(u"background-color: #ffffff;")
+        self.spinbox.setFont(font)
         self.pushButton = QPushButton(self.frame_3)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(20, 10, 81, 81))
@@ -318,6 +329,7 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"\u0410\u043b\u0433\u043e\u0440\u0438\u0442\u043c \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438 \u0441\u043b\u0438\u044f\u043d\u0438\u0435\u043c", None))
 
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"4", None))
+        self.label_60.setText("Чисел в 1 массиве:")
         self.pushButton.setText("")
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0436\u0438\u043c\u044b \u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f:", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u0427\u0438\u0441\u043b\u043e \u043c\u0430\u0441\u0441\u0438\u0432\u043e\u0432 \u0434\u043b\u044f \u0442\u0435\u0441\u0442\u0430:", None))

@@ -66,7 +66,15 @@ class PythonCPUBenchmark(QMainWindow):
             self.set_zero_into_table()
             self.ui.pushButton.setIcon(self.stop_icon)
             self.output_results("Идет тестирование", "Идет тестирование")
-            test = CustomBenchamrk(self.loop, self.chosen_mods, self.ui.horizontalSlider.value(), self.ui.comboBox.currentIndex(), self.output_results, self.activate_start_button)
+            test = CustomBenchamrk(
+                loop=self.loop,
+                chosen_mods=self.chosen_mods,
+                arrays_number=self.ui.horizontalSlider.value(),
+                numbers_amount=self.ui.spinbox.value(),
+                alghoritm=self.ui.comboBox.currentIndex(),
+                output_results=self.output_results,
+                activate_start_button=self.activate_start_button
+            )
             test.start()
             self._load_test = test
         else:
@@ -86,12 +94,14 @@ class PythonCPUBenchmark(QMainWindow):
         self.ui.checkBox.setEnabled(False)
         self.ui.checkBox_2.setEnabled(False)
         self.ui.comboBox.setEnabled(False)
+        self.ui.spinbox.setEnabled(False)
 
     def enable_mutable_widgets(self):
         self.ui.comboBox.setEnabled(True)
         self.ui.horizontalSlider.setEnabled(True)
         self.ui.checkBox.setEnabled(True)
         self.ui.checkBox_2.setEnabled(True)
+        self.ui.spinbox.setEnabled(True)
 
     def get_arrays_number(self):
         size = self.ui.horizontalSlider.value()

@@ -24,6 +24,7 @@ class CustomBenchamrk:
                  loop: AbstractEventLoop,
                  chosen_mods: set[str],
                  arrays_number: int,
+                 numbers_amount: int,
                  alghoritm: str,
                  output_results,
                  activate_start_button):
@@ -33,6 +34,7 @@ class CustomBenchamrk:
         self._arrays_number = arrays_number
         self._alghoritm = alghoritm
         self._output_results = output_results
+        self._numbers_amount = numbers_amount
         self._activate_start_button = activate_start_button
 
         self._func_choice = {
@@ -58,7 +60,7 @@ class CustomBenchamrk:
         self._output_results("Отмена", "Отмена")
     
     async def _test_1(self):
-        self.nums = [[randint(1, 1000) for n in range(10000)] for _ in range(10)][:self._arrays_number]
+        self.nums = [[randint(1, 1000) for n in range(self._numbers_amount)] for _ in range(10)][:self._arrays_number]
 
         if "Однопроцессность" in self._chosen_mods:
             start = time.time()
