@@ -3,12 +3,13 @@ from asyncio import AbstractEventLoop
 import sys
 from threading import Thread
 
+from PySide6.QtWidgets import QApplication
 
 from ui import PythonCPUBenchmark
-from PySide6.QtWidgets import QApplication
 
 
 class ThreadedEventLoop(Thread):
+    """Класс асинхронного цикла событий."""
     def __init__(self, loop: AbstractEventLoop):
         super().__init__()
         self._loop = loop

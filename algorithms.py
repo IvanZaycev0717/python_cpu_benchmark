@@ -49,7 +49,7 @@ def count_sort(arr: list) -> None:
 
 
 def quick_sort(arr):
-    """Алгоритм бьстрой сортировкиэ"""
+    """Алгоритм бьстрой сортировки."""
     if len(arr) <= 1:
         return arr
     else:

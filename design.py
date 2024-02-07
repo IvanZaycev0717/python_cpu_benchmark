@@ -27,7 +27,9 @@ class Ui_MainWindow(object):
         font.setFamilies([u"Inter"])
         font.setPointSize(12)
         MainWindow.setFont(font)
-        MainWindow.setStyleSheet(u"font-family: Inter; background-color: #0b132b;")
+        MainWindow.setStyleSheet(
+            u"font-family: Inter; background-color: #0b132b;"
+            )
         MainWindow.setDocumentMode(False)
         MainWindow.setDockNestingEnabled(False)
         MainWindow.setWindowIcon(QIcon('images/logo.svg'))

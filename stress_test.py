@@ -5,18 +5,13 @@ import time
 from functools import partial
 from random import randint
 import random
-random.seed(1)
 
 from algorithms import (insert_sort, selection_sort,
                         bubble_sort, count_sort,
                         quick_sort, merge_sort)
 
 
-def count(count_to):
-    counter = 0
-    while counter < count_to:
-        counter = counter + 1
-    return counter
+random.seed(1)
 
 
 class CustomBenchamrk:
@@ -49,18 +44,21 @@ class CustomBenchamrk:
         self.single_time = None
         self.multi_time = None
 
-
     def start(self):
         future = asyncio.run_coroutine_threadsafe(self._test_1(), self._loop)
         self._load_test_future = future
-    
+
     def cancel(self):
         if self._load_test_future:
             self._loop.call_soon_threadsafe(self._load_test_future.cancel)
         self._output_results("Отмена", "Отмена")
-    
+
     async def _test_1(self):
-        self.nums = [[randint(1, 1000) for n in range(self._numbers_amount)] for _ in range(10)][:self._arrays_number]
+        self.nums = [
+            [
+                randint(1, 1000) for n in range(self._numbers_amount)
+                ] for _ in range(10)
+            ][:self._arrays_number]
 
         if "Однопроцессность" in self._chosen_mods:
             start = time.time()
@@ -68,14 +66,19 @@ class CustomBenchamrk:
                 self._func_choice[self._alghoritm](num)
             end = time.time()
             self.single_time = end - start
-        
+
         if "Многопроцессность" in self._chosen_mods:
             start = time.time()
             with ProcessPoolExecutor() as process_pool:
-                calls = [partial(self._func_choice[self._alghoritm], num) for num in self.nums]
+                calls = [
+                    partial(self._func_choice[self._alghoritm], num)
+                    for num in self.nums
+                    ]
                 call_coros = []
                 for call in calls:
-                    call_coros.append(self._loop.run_in_executor(process_pool, call))
+                    call_coros.append(
+                        self._loop.run_in_executor(process_pool, call)
+                        )
 
                 await asyncio.gather(*call_coros)
 

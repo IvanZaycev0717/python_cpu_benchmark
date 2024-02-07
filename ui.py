@@ -44,9 +44,10 @@ class PythonCPUBenchmark(QMainWindow):
         # processor information
         self.get_cpu_information()
 
-        self.ui.pushButton.clicked.connect(self.start_benchark)
-        self.ui.checkBox.toggled.connect(self.chose_benchark_mode)
-        self.ui.checkBox_2.toggled.connect(self.chose_benchark_mode)
+        # PyQt signals
+        self.ui.pushButton.clicked.connect(self.start_benchmark)
+        self.ui.checkBox.toggled.connect(self.chose_benchmark_mode)
+        self.ui.checkBox_2.toggled.connect(self.chose_benchmark_mode)
         self.ui.horizontalSlider.valueChanged.connect(self.get_arrays_number)
 
         self.chosen_mods = set()
@@ -57,7 +58,7 @@ class PythonCPUBenchmark(QMainWindow):
         self.ui.label_10.setText(str(psutil.cpu_count() // 2))
         self.ui.label_11.setText(str(psutil.cpu_count()))
 
-    def start_benchark(self):
+    def start_benchmark(self):
         if not self.is_benchmark_in_porgress:
             self.is_benchmark_in_porgress = True
 
@@ -107,7 +108,7 @@ class PythonCPUBenchmark(QMainWindow):
         size = self.ui.horizontalSlider.value()
         self.ui.label_18.setText(str(size))
 
-    def chose_benchark_mode(self, checked):
+    def chose_benchmark_mode(self, checked):
         sender = self.sender()
         if checked:
             self.chosen_mods.add(sender.text())
