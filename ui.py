@@ -37,8 +37,8 @@ class PythonCPUBenchmark(QMainWindow):
         self.ui.pushButton.setEnabled(False)
 
         # processor images
-        processor_type = platform.processor()
-        if 'AMD' in processor_type:
+        self.processor_type = platform.processor()
+        if 'AMD' in self.processor_type:
             self.ui.label_14.setPixmap(QPixmap(u"images/amd.png"))
         else:
             self.ui.label_14.setPixmap(QPixmap(u"images/intel.png"))
@@ -56,7 +56,9 @@ class PythonCPUBenchmark(QMainWindow):
 
     def get_cpu_information(self) -> None:
         """Inserts CPU info into widgets fields."""
-        self.ui.label_8.setText(platform.processor()[:5])
+        self.ui.label_8.setText(
+            'AMD' if 'AMD' in self.processor_type else 'Intel'
+            )
         self.ui.label_9.setText(str(psutil.cpu_freq().max))
         self.ui.label_10.setText(str(psutil.cpu_count() // 2))
         self.ui.label_11.setText(str(psutil.cpu_count()))

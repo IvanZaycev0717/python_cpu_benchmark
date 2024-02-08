@@ -291,7 +291,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setFont(font1)
         self.label_6 = QLabel(self.centralwidget)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(190, 620, 241, 31))
+        self.label_6.setGeometry(QRect(190, 620, 300, 31))
         self.label_6.setFont(font1)
         self.label_6.setAlignment(Qt.AlignCenter)
         MainWindow.setCentralWidget(self.centralwidget)
