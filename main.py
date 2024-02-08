@@ -9,13 +9,13 @@ from ui import PythonCPUBenchmark
 
 
 class ThreadedEventLoop(Thread):
-    """Класс асинхронного цикла событий."""
-    def __init__(self, loop: AbstractEventLoop):
+    """Class for async event loop."""
+    def __init__(self, loop: AbstractEventLoop) -> None:
         super().__init__()
         self._loop = loop
-        self.daemon = True
+        self.daemon: bool = True
 
-    def run(self):
+    def run(self) -> None:
         self._loop.run_forever()
 
 

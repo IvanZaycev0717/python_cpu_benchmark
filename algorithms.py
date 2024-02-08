@@ -1,5 +1,5 @@
 def insert_sort(arr: int) -> None:
-    """Алгоритм сортировки вставками."""
+    """Insertion sort algorithm."""
     N = len(arr)
     for top in range(1, N):
         k = top
@@ -9,7 +9,7 @@ def insert_sort(arr: int) -> None:
 
 
 def selection_sort(arr: list) -> None:
-    """Алгоритм сортировки выбором."""
+    """Selection sort algorithm."""
     N = len(arr)
     for pos in range(0, N-1):
         for k in range(pos+1, N):
@@ -18,7 +18,7 @@ def selection_sort(arr: list) -> None:
 
 
 def bubble_sort(arr: list) -> None:
-    """Алгоритм сортировки пузырьком."""
+    """Bubble sort algorithm."""
     N = len(arr)
     for bypass in range(1, N):
         for k in range(0, N-bypass):
@@ -27,7 +27,7 @@ def bubble_sort(arr: list) -> None:
 
 
 def count_sort(arr: list) -> None:
-    """Алгоритм сортировки подсчетом."""
+    """Counting sort algorithm."""
     max_value = max(arr)
     min_value = min(arr)
     range_of_elements = max_value - min_value + 1
@@ -49,7 +49,7 @@ def count_sort(arr: list) -> None:
 
 
 def quick_sort(arr):
-    """Алгоритм бьстрой сортировки."""
+    """Quick sorting algorithm."""
     if len(arr) <= 1:
         return arr
     else:
@@ -61,7 +61,7 @@ def quick_sort(arr):
 
 
 def merge(A: list[int], B: list[int]) -> list[int]:
-    """Вспомогальный метод для сортировки слиянием."""
+    """Helper function for merge sort."""
     C = [0] * (len(A) + len(B))
     i = k = n = 0
     while i < len(A) and k < len(B):
@@ -85,7 +85,7 @@ def merge(A: list[int], B: list[int]) -> list[int]:
 
 
 def merge_sort(arr: list[int]) -> None:
-    """Алгоритм сортировки слиянием."""
+    """Merge sort algorithm."""
     if len(arr) > 1:
         middle = len(arr) // 2
         left_half = arr[:middle]

@@ -19,6 +19,7 @@ import my_res_rc
 
 
 class Ui_MainWindow(object):
+    """Class for design and widgets of GUI."""
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -158,7 +159,7 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.horizontalSlider = QSlider(self.frame_3)
         self.horizontalSlider.setObjectName(u"horizontalSlider")
-        self.horizontalSlider.setGeometry(QRect(330, 40, 180, 22))
+        self.horizontalSlider.setGeometry(QRect(330, 40, 145, 22))
         self.horizontalSlider.setMinimum(1)
         self.horizontalSlider.setMaximum(10)
         self.horizontalSlider.setValue(4)
@@ -170,7 +171,7 @@ class Ui_MainWindow(object):
         self.horizontalSlider.setTickInterval(0)
         self.label_18 = QLabel(self.frame_3)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setGeometry(QRect(530, 40, 21, 16))
+        self.label_18.setGeometry(QRect(490, 40, 21, 16))
         self.label_18.setFont(font)
         self.label_60 = QLabel(self.frame_3)
         self.label_60.setObjectName(u"label_60")
