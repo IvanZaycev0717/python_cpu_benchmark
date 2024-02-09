@@ -57,27 +57,30 @@ class CustomBenchamrk:
         self._output_results("Отмена", "Отмена")
 
     async def _test_1(self) -> None:
-        self.nums = [
-            [
-                randint(1, 1000) for n in range(self._numbers_amount)
-                ] for _ in range(10)
-            ][:self._arrays_number]
-
+        nums = self.get_test_data()
         # testing single-processing
         if "Однопроцессность" in self._chosen_mods:
-            start = time.time()
-            for num in self.nums:
+            start_s = time.time()
+            for num in nums:
                 self._func_choice[self._alghoritm](num)
-            end = time.time()
-            self.single_time = end - start
+                end_s = time.time()
+
+            self.single_time = end_s - start_s
+
+        # creates a new array with the same numbers
+        # because prev array was sorted
+        nums = self.get_test_data()
+
+        # gives chill out to our CPU for 3 seconds
+        await asyncio.sleep(3)
 
         # testing multi-processing
         if "Многопроцессность" in self._chosen_mods:
-            start = time.time()
+            start_m = time.time()
             with ProcessPoolExecutor() as process_pool:
                 calls = [
                     partial(self._func_choice[self._alghoritm], num)
-                    for num in self.nums
+                    for num in nums
                     ]
                 call_coros = []
                 for call in calls:
@@ -86,10 +89,17 @@ class CustomBenchamrk:
                         )
 
                 await asyncio.gather(*call_coros)
+            end_m = time.time()
 
-            end = time.time()
-            self.multi_time = end - start
+            self.multi_time = end_m - start_m
 
         # output result data into GUI
         self._output_results(self.single_time, self.multi_time)
         self._activate_start_button()
+
+    def get_test_data(self) -> list[int]:
+        return [
+            [
+                randint(1, 1000) for n in range(self._numbers_amount)
+                ] for _ in range(10)
+            ][:self._arrays_number]
