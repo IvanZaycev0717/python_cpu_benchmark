@@ -101,5 +101,5 @@ class CustomBenchamrk:
         return [
             [
                 randint(1, 1000) for n in range(self._numbers_amount)
-                ] for _ in range(10)
-            ][:self._arrays_number]
+                ] for _ in range(self._arrays_number)
+            ]

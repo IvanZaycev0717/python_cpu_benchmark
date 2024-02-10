@@ -16,7 +16,7 @@
 Для того, чтобы понять как работает приложение, а также ознакомиться с основными терминами и понятиями асинхронного программирования, многопоточности и многопроцессности, вы можете прочитать мою статью о создании приложения на сайте Хабр.
 Сайт        | Ссылка           |Описание|
 | ------------- |:-------------:|:--------:|
-|![habr](https://github.com/IvanZaycev0717/the_mystery_of_the_mansion/assets/111955306/772e1cac-b1e7-49c3-b87f-5f8fb2bdfbc8)|[Ссылка](https://habr.com/ru/users/IvanZaycev0717/)|Статья о создании приложения|
+|![habr](https://github.com/IvanZaycev0717/the_mystery_of_the_mansion/assets/111955306/772e1cac-b1e7-49c3-b87f-5f8fb2bdfbc8)|[Ссылка](https://habr.com/ru/articles/792832/)|Статья о создании приложения|
 
 ## :sunflower: Техническое описание
 ![scheme](https://github.com/IvanZaycev0717/python_cpu_benchmark/assets/111955306/1e3bcfb6-fc7e-4a00-95d2-adec8539507b)  
