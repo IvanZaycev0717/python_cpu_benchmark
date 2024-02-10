@@ -12,12 +12,11 @@
 - :zap: **concurrent.futures**
 - :zap: **psutil**
 
-## :evergreen_tree: Демонстрация работы приложения
-На своём YouTube канале я записал видео, которое содержит всю необходимую теорию для понимания работы приложения, а также сами тесты с выводами. Также сущуствует текстовая версия данного видео - статья на сайте Хабр.
+## :evergreen_tree: Принципы работы приложения
+Для того, чтобы понять как работает приложение, а также ознакомиться с основными терминами и понятиями асинхронного программирования, многопоточности и многопроцессности, вы можете прочитать мою статью о создании приложения на сайте Хабр.
 Сайт        | Ссылка           |Описание|
 | ------------- |:-------------:|:--------:|
-|![AID](https://github.com/IvanZaycev0717/the_mystery_of_the_mansion/assets/111955306/138cf8d1-a6f8-4835-9e54-93a48df815d3)|[Ссылка](https://youtu.be/eud7mDUjJ3E)|Демонстрация работы приложения|
-|![habr](https://github.com/IvanZaycev0717/the_mystery_of_the_mansion/assets/111955306/772e1cac-b1e7-49c3-b87f-5f8fb2bdfbc8)|[Ссылка](https://habr.com/ru/articles/779624/)|Статья о создании приложения|
+|![habr](https://github.com/IvanZaycev0717/the_mystery_of_the_mansion/assets/111955306/772e1cac-b1e7-49c3-b87f-5f8fb2bdfbc8)|[Ссылка](https://habr.com/ru/users/IvanZaycev0717/)|Статья о создании приложения|
 
 ## :sunflower: Техническое описание
 ![scheme](https://github.com/IvanZaycev0717/python_cpu_benchmark/assets/111955306/1e3bcfb6-fc7e-4a00-95d2-adec8539507b)  
