@@ -51,13 +51,24 @@ def count_sort(arr: list) -> None:
 def quick_sort(arr):
     """Quick sorting algorithm."""
     if len(arr) <= 1:
-        return arr
-    else:
-        pivot = arr[len(arr) // 2]
-        left = [x for x in arr if x < pivot]
-        middle = [x for x in arr if x == pivot]
-        right = [x for x in arr if x > pivot]
-        return quick_sort(left) + middle + quick_sort(right)
+        return
+    barrier = arr[0]
+    L = []
+    M = []
+    R = []
+    for x in arr:
+        if x < barrier:
+            L.append(x)
+        elif x == barrier:
+            M.append(x)
+        else:
+            R.append(x)
+    quick_sort(L)
+    quick_sort(R)
+    k = 0
+    for x in L + M + R:
+        arr[k] = x
+        k += 1
 
 
 def merge(A: list[int], B: list[int]) -> list[int]:
