@@ -73,14 +73,14 @@ def quick_sort(arr):
 
 def merge(A: list[int], B: list[int]) -> list[int]:
     """Helper function for merge sort."""
-    C = [0] * (len(A) + len(B))
-    i = k = n = 0
-    while i < len(A) and k < len(B):
+    C = [0] * (len(A) + len(B))  
+    i = k = n = 0  
+    while i < len(A) and k < len(B):  
         if A[i] <= B[k]:
             C[n] = A[i]
             i += 1
             n += 1
-        else:
+        else:  
             C[n] = B[k]
             k += 1
             n += 1
@@ -97,31 +97,16 @@ def merge(A: list[int], B: list[int]) -> list[int]:
 
 def merge_sort(arr: list[int]) -> None:
     """Merge sort algorithm."""
-    if len(arr) > 1:
-        middle = len(arr) // 2
-        left_half = arr[:middle]
-        right_half = arr[middle:]
+    if len(arr) <= 1:
+        return
 
-        merge_sort(left_half)
-        merge_sort(right_half)
+    middle = len(arr) // 2  
+    L = [arr[i] for i in range(middle)]  
+    R = [arr[i] for i in range(middle, len(arr))]  
+    merge_sort(L)
+    merge_sort(R)
+    C = merge(L,R)
 
-        i = j = k = 0
+    for i in range(len(arr)):
+        arr[i] = C[i]
 
-        while i < len(left_half) and j < len(right_half):
-            if left_half[i] < right_half[j]:
-                arr[k] = left_half[i]
-                i += 1
-            else:
-                arr[k] = right_half[j]
-                j += 1
-            k += 1
-
-        while i < len(left_half):
-            arr[k] = left_half[i]
-            i += 1
-            k += 1
-
-        while j < len(right_half):
-            arr[k] = right_half[j]
-            j += 1
-            k += 1
