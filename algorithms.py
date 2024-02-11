@@ -28,24 +28,22 @@ def bubble_sort(arr: list) -> None:
 
 def count_sort(arr: list) -> None:
     """Counting sort algorithm."""
-    max_value = max(arr)
-    min_value = min(arr)
-    range_of_elements = max_value - min_value + 1
-    count_arr = [0] * range_of_elements
-    output_arr = [0] * len(arr)
+    max_value = max(arr) + 1
+    count = [0] * max_value
+    output = [0] * len(arr)
+
+    for num in arr:
+        count[num] += 1
+
+    for i in range(1, max_value):
+        count[i] += count[i - 1]
+
+    for num in reversed(arr):
+        output[count[num] - 1] = num
+        count[num] -= 1
 
     for i in range(len(arr)):
-        count_arr[arr[i] - min_value] += 1
-
-    for i in range(1, len(count_arr)):
-        count_arr[i] += count_arr[i - 1]
-
-    for i in range(len(arr) - 1, -1, -1):
-        output_arr[count_arr[arr[i] - min_value] - 1] = arr[i]
-        count_arr[arr[i] - min_value] -= 1
-
-    for i in range(len(arr)):
-        arr[i] = output_arr[i]
+        arr[i] = output[i]
 
 
 def quick_sort(arr):
