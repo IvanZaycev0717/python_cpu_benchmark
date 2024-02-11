@@ -73,14 +73,14 @@ def quick_sort(arr):
 
 def merge(A: list[int], B: list[int]) -> list[int]:
     """Helper function for merge sort."""
-    C = [0] * (len(A) + len(B))  
-    i = k = n = 0  
-    while i < len(A) and k < len(B):  
+    C = [0] * (len(A) + len(B))
+    i = k = n = 0
+    while i < len(A) and k < len(B):
         if A[i] <= B[k]:
             C[n] = A[i]
             i += 1
             n += 1
-        else:  
+        else:
             C[n] = B[k]
             k += 1
             n += 1
@@ -100,13 +100,12 @@ def merge_sort(arr: list[int]) -> None:
     if len(arr) <= 1:
         return
 
-    middle = len(arr) // 2  
-    L = [arr[i] for i in range(middle)]  
-    R = [arr[i] for i in range(middle, len(arr))]  
+    middle = len(arr) // 2
+    L = [arr[i] for i in range(middle)]
+    R = [arr[i] for i in range(middle, len(arr))]
     merge_sort(L)
     merge_sort(R)
-    C = merge(L,R)
+    C = merge(L, R)
 
     for i in range(len(arr)):
         arr[i] = C[i]
-
