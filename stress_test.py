@@ -97,7 +97,7 @@ class CustomBenchamrk:
         self._output_results(self.single_time, self.multi_time)
         self._activate_start_button()
 
-    def get_test_data(self) -> list[int]:
+    def get_test_data(self) -> list[list[int]]:
         return [
             [
                 randint(1, 1000) for n in range(self._numbers_amount)
